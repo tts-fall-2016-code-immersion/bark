@@ -17,7 +17,7 @@ class TweetsController < ApplicationController
       if @tweet.save
         format.html { redirect_to tweet_path(@tweet.id), notice: 'success!'}
       else
-        format.html { render :new, error: 'there was a problem' }
+        format.html { render :new, error: @tweet.errors[:messavge] }
       end
     end
   end
